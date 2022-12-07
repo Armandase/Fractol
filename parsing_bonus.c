@@ -1,0 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adamiens <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/02 14:50:07 by adamiens          #+#    #+#             */
+/*   Updated: 2022/11/25 17:05:38 by adamiens         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fractol_bonus.h"
+
+void	ft_error_msg(void)
+{
+	ft_printf("bonus usage : fractol [fractals]\n");
+	ft_printf(" fractals :\n");
+	ft_printf(" --> Mandelbrot\n");
+	ft_printf(" --> Julia\n");
+	ft_printf(" --> Multibulb\n");
+	ft_printf(" --> Burning ship\n");
+}
+
+int	parsing(int argc, char **argv)
+{
+	if (argc != 2)
+	{
+		ft_error_msg();
+		return (0);
+	}
+	if (ft_strncmp(argv[1], "Mandelbrot", 11) == 0)
+		return (1);
+	else if (ft_strncmp(argv[1], "Julia", 6) == 0)
+		return (2);
+	else if (ft_strncmp(argv[1], "Multibulb", 10) == 0)
+		return (3);
+	else if (ft_strncmp(argv[1], "Burning ship", 13) == 0)
+		return (4);
+	else
+	{
+		ft_error_msg();
+		return (0);
+	}
+}
