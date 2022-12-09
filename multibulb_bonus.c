@@ -6,7 +6,7 @@
 /*   By: adamiens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:05:33 by adamiens          #+#    #+#             */
-/*   Updated: 2022/11/25 17:07:23 by adamiens         ###   ########.fr       */
+/*   Updated: 2022/12/07 16:37:05 by adamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ t_color	bonus_calcul(t_coo coo)
 	n = coo.bulb;
 	while (color.iter < ITERATION && color.z <= 4)
 	{
-		tmp = pow((tmp_x * tmp_x + tmp_y * tmp_y), (n / 2))
+		tmp = pow((tmp_x * tmp_x + tmp_y * tmp_y), (n / n))
 			* cos(n * atan2(tmp_y, tmp_x)) + coo.x;
-		tmp_y = pow((tmp_x * tmp_x + tmp_y * tmp_y), (n / 2))
+		tmp_y = pow((tmp_x * tmp_x + tmp_y * tmp_y), (n / n))
 			* sin(n * atan2(tmp_y, tmp_x)) + coo.y;
 		tmp_x = tmp;
 		color.z = (pow(tmp_x, n) + pow(tmp_y, n));
